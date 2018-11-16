@@ -33,7 +33,7 @@
             <fuse-highlight lang="html">
                 <textarea #source>
                     <fuse-material-color-picker [(selectedClass)]="colorClass"
-                                                (onValueChange)="onSettingsChange()">
+                                                (onColorChanged)="onColorChanged()">
                     </fuse-material-color-picker>
                 </textarea>
             </fuse-highlight>
@@ -56,7 +56,7 @@
 
         <div class="section-title">Outputs</div>
         <p class="py-8" fxLayout="row" fxLayoutAlign="start center">
-            <code class="mr-16">onValueChange</code>
+            <code class="mr-16">onColorChanged</code>
             <span>
                 Event that triggered when a color selected. Returns an object that holds palette, hue, class name,
                 background and foreground colors.
