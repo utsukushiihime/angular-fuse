@@ -38,7 +38,7 @@ export class CalendarEventModel
             primary  : data.color && data.color.primary || '#1e90ff',
             secondary: data.color && data.color.secondary || '#D1E8FF'
         };
-        this.draggable = data.draggable || true;
+        this.draggable = data.draggable;
         this.resizable = {
             beforeStart: data.resizable && data.resizable.beforeStart || true,
             afterEnd   : data.resizable && data.resizable.afterEnd || true
