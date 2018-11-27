@@ -1,5 +1,5 @@
 import { Inject, Injectable, InjectionToken } from '@angular/core';
-import { NavigationEnd, NavigationStart, ResolveEnd, Router, RoutesRecognized } from '@angular/router';
+import { ResolveEnd, Router } from '@angular/router';
 import { Platform } from '@angular/cdk/platform';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
