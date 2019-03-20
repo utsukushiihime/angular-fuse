@@ -51,16 +51,17 @@ export const fuseAnimations = [
     ]),
 
     trigger('fadeInOut', [
-        state('0', style({
+        state('0, void', style({
             display: 'none',
             opacity: 0
         })),
-        state('1', style({
+        state('1, *', style({
             display: 'block',
             opacity: 1
         })),
         transition('1 => 0', animate('300ms ease-out')),
-        transition('0 => 1', animate('300ms ease-in'))
+        transition('0 => 1', animate('300ms ease-in')),
+        transition('void <=> *', animate('300ms ease-in'))
     ]),
 
     trigger('slideInOut', [
@@ -190,7 +191,7 @@ export const fuseAnimations = [
     // -----------------------------------------------------------------------------------------------------
     // @ Router animations
     // -----------------------------------------------------------------------------------------------------
-    
+
     trigger('routerTransitionLeft', [
 
         transition('* => *', [
