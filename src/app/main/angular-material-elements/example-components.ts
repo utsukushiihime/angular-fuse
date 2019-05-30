@@ -171,7 +171,6 @@ import { StepperLabelPositionBottomExample } from 'assets/angular-material-examp
 import { StepperStatesExample } from 'assets/angular-material-examples/stepper-states/stepper-states-example';
 import { StepperErrorsExample } from 'assets/angular-material-examples/stepper-errors/stepper-errors-example';
 import { TabGroupAlignExample } from 'assets/angular-material-examples/tab-group-align/tab-group-align-example';
-import { SimpleColumn, TableSimpleColumnExample } from 'assets/angular-material-examples/table-simple-column/table-simple-column-example';
 import { TableWrappedExample, WrapperTable } from 'assets/angular-material-examples/table-wrapped/table-wrapped-example';
 import { PlainInputAutocompleteExample } from 'assets/angular-material-examples/autocomplete-plain-input/autocomplete-plain-input-example';
 import { ChipsDragDropExample } from 'assets/angular-material-examples/chips-drag-and-drop/chips-drag-and-drop-example';
@@ -385,7 +384,6 @@ export const COMPONENT_MAP = {
         'table-pagination',
         'table-row-context',
         'table-selection',
-        'table-simple-column',
         'table-sorting',
         'table-sticky-columns',
         'table-sticky-complex',
@@ -1017,10 +1015,6 @@ export const EXAMPLE_COMPONENTS = {
         title    : 'Table with selection',
         component: TableSelectionExample
     },
-    'table-simple-column'                  : {
-        title    : 'Table with a custom column component for easy column definition reuse',
-        component: TableSimpleColumnExample
-    },
     'table-sorting'                        : {
         title    : 'Table with sorting',
         component: TableSortingExample
@@ -1317,7 +1311,6 @@ export const EXAMPLE_LIST = [
     TablePaginationExample,
     TableRowContextExample,
     TableSelectionExample,
-    TableSimpleColumnExample, SimpleColumn,
     TableSortingExample,
     TableStickyColumnsExample,
     TableStickyComplexExample,
