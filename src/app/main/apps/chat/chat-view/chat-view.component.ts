@@ -22,13 +22,13 @@ export class ChatViewComponent implements OnInit, OnDestroy, AfterViewInit
     replyInput: any;
     selectedChat: any;
 
-    @ViewChild(FusePerfectScrollbarDirective)
+    @ViewChild(FusePerfectScrollbarDirective, {static: false})
     directiveScroll: FusePerfectScrollbarDirective;
 
     @ViewChildren('replyInput')
     replyInputField;
 
-    @ViewChild('replyForm')
+    @ViewChild('replyForm', {static: false})
     replyForm: NgForm;
 
     // Private

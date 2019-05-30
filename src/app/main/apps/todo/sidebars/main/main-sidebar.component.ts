@@ -38,8 +38,8 @@ export class TodoMainSidebarComponent implements OnInit, OnDestroy
     {
         // Set the defaults
         this.accounts = {
-            'creapond'    : 'johndoe@creapond.com',
-            'withinpixels': 'johndoe@withinpixels.com'
+            creapond    : 'johndoe@creapond.com',
+            withinpixels: 'johndoe@withinpixels.com'
         };
         this.selectedAccount = 'creapond';
 

@@ -80,7 +80,7 @@ export class MailsEffect
      * @type {Observable<any>}
      */
     @Effect()
-    updateMail: Observable<MailsActions.MailsActionsAll> =
+    updateMail: Observable<{}> =
         this.actions
             .pipe(
                 ofType<MailsActions.UpdateMail>(MailsActions.UPDATE_MAIL),

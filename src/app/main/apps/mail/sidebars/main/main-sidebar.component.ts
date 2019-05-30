@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -41,8 +41,8 @@ export class MailMainSidebarComponent implements OnInit, OnDestroy
     {
         // Set the defaults
         this.accounts = {
-            'creapond'    : 'johndoe@creapond.com',
-            'withinpixels': 'johndoe@withinpixels.com'
+            creapond    : 'johndoe@creapond.com',
+            withinpixels: 'johndoe@withinpixels.com'
         };
         this.selectedAccount = 'creapond';
 

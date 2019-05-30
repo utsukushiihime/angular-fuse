@@ -45,9 +45,9 @@ export class ScrumboardLabelSelectorComponent implements OnInit, OnDestroy
         this.cardLabelsChanged = new EventEmitter();
         this.labelsMenuView = 'labels';
         this.newLabel = {
-            'id'   : '',
-            'name' : '',
-            'color': 'blue-400'
+            id   : '',
+            name : '',
+            color: 'blue-400'
         };
         this.toggleInArray = FuseUtils.toggleInArray;
 

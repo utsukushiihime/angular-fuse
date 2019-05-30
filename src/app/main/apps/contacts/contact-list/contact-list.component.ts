@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { MatDialog, MatDialogRef } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DataSource } from '@angular/cdk/collections';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -20,7 +20,7 @@ import { ContactsContactFormDialogComponent } from 'app/main/apps/contacts/conta
 })
 export class ContactsContactListComponent implements OnInit, OnDestroy
 {
-    @ViewChild('dialogContent')
+    @ViewChild('dialogContent', {static: false})
     dialogContent: TemplateRef<any>;
 
     contacts: any;

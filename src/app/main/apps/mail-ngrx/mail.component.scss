@@ -51,16 +51,16 @@ mail-ngrx {
 
             @include media-breakpoint(xs) {
 
-                mail-list {
+                mail-ngrx-list {
                     border-right: none;
                 }
 
-                mail-list,
-                mail-details {
+                mail-ngrx-list,
+                mail-ngrx-details {
                     flex: 1 0 100%;
                 }
 
-                mail-details {
+                mail-ngrx-details {
                     display: none !important;
                 }
 
@@ -76,11 +76,11 @@ mail-ngrx {
 
                     .content {
 
-                        mail-list {
+                        mail-ngrx-list {
                             display: none !important;
                         }
 
-                        mail-details {
+                        mail-ngrx-details {
                             display: flex !important;
                         }
                     }

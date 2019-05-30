@@ -45,29 +45,29 @@ export class ToolbarComponent implements OnInit, OnDestroy
         // Set the defaults
         this.userStatusOptions = [
             {
-                'title': 'Online',
-                'icon' : 'icon-checkbox-marked-circle',
-                'color': '#4CAF50'
+                title: 'Online',
+                icon : 'icon-checkbox-marked-circle',
+                color: '#4CAF50'
             },
             {
-                'title': 'Away',
-                'icon' : 'icon-clock',
-                'color': '#FFC107'
+                title: 'Away',
+                icon : 'icon-clock',
+                color: '#FFC107'
             },
             {
-                'title': 'Do not Disturb',
-                'icon' : 'icon-minus-circle',
-                'color': '#F44336'
+                title: 'Do not Disturb',
+                icon : 'icon-minus-circle',
+                color: '#F44336'
             },
             {
-                'title': 'Invisible',
-                'icon' : 'icon-checkbox-blank-circle-outline',
-                'color': '#BDBDBD'
+                title: 'Invisible',
+                icon : 'icon-checkbox-blank-circle-outline',
+                color: '#BDBDBD'
             },
             {
-                'title': 'Offline',
-                'icon' : 'icon-checkbox-blank-circle-outline',
-                'color': '#616161'
+                title: 'Offline',
+                icon : 'icon-checkbox-blank-circle-outline',
+                color: '#616161'
             }
         ];
 
@@ -109,7 +109,7 @@ export class ToolbarComponent implements OnInit, OnDestroy
             });
 
         // Set the selected language from default languages
-        this.selectedLanguage = _.find(this.languages, {'id': this._translateService.currentLang});
+        this.selectedLanguage = _.find(this.languages, {id: this._translateService.currentLang});
     }
 
     /**

@@ -23,7 +23,7 @@ export class TodoDetailsComponent implements OnInit, OnDestroy
     formType: string;
     todoForm: FormGroup;
 
-    @ViewChild('titleInput')
+    @ViewChild('titleInput', {static: false})
     titleInputField;
 
     // Private
@@ -128,16 +128,16 @@ export class TodoDetailsComponent implements OnInit, OnDestroy
     createTodoForm(): FormGroup
     {
         return this._formBuilder.group({
-            'id'       : [this.todo.id],
-            'title'    : [this.todo.title],
-            'notes'    : [this.todo.notes],
-            'startDate': [this.todo.startDate],
-            'dueDate'  : [this.todo.dueDate],
-            'completed': [this.todo.completed],
-            'starred'  : [this.todo.starred],
-            'important': [this.todo.important],
-            'deleted'  : [this.todo.deleted],
-            'tags'     : [this.todo.tags]
+            id       : [this.todo.id],
+            title    : [this.todo.title],
+            notes    : [this.todo.notes],
+            startDate: [this.todo.startDate],
+            dueDate  : [this.todo.dueDate],
+            completed: [this.todo.completed],
+            starred  : [this.todo.starred],
+            important: [this.todo.important],
+            deleted  : [this.todo.deleted],
+            tags     : [this.todo.tags]
         });
     }
 

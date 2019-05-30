@@ -52,8 +52,8 @@ export class AnalyticsDashboardComponent implements OnInit
      */
     private _registerCustomChartJSPlugin(): void
     {
-        (<any>window).Chart.plugins.register({
-            afterDatasetsDraw: function (chart, easing): any {
+        (window as any).Chart.plugins.register({
+            afterDatasetsDraw: function(chart, easing): any {
                 // Only activate the plugin if it's made available
                 // in the options
                 if (
@@ -67,18 +67,18 @@ export class AnalyticsDashboardComponent implements OnInit
                 // To only draw at the end of animation, check for easing === 1
                 const ctx = chart.ctx;
 
-                chart.data.datasets.forEach(function (dataset, i): any {
+                chart.data.datasets.forEach(function(dataset, i): any {
                     const meta = chart.getDatasetMeta(i);
                     if ( !meta.hidden )
                     {
-                        meta.data.forEach(function (element, index): any {
+                        meta.data.forEach(function(element, index): any {
 
                             // Draw the text in black, with the specified font
                             ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
                             const fontSize = 13;
                             const fontStyle = 'normal';
                             const fontFamily = 'Roboto, Helvetica Neue, Arial';
-                            ctx.font = (<any>window).Chart.helpers.fontString(fontSize, fontStyle, fontFamily);
+                            ctx.font = (window as any).Chart.helpers.fontString(fontSize, fontStyle, fontFamily);
 
                             // Just naively convert to string for now
                             const dataString = dataset.data[index].toString() + 'k';

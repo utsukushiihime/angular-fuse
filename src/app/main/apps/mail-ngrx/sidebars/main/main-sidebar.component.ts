@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { FormGroup } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -41,8 +41,8 @@ export class MailNgrxMainSidebarComponent
     {
         // Set the defaults
         this.accounts = {
-            'creapond'    : 'johndoe@creapond.com',
-            'withinpixels': 'johndoe@withinpixels.com'
+            creapond    : 'johndoe@creapond.com',
+            withinpixels: 'johndoe@withinpixels.com'
         };
         this.selectedAccount = 'creapond';
         this.folders$ = this._store.pipe(select(fromStore.getFoldersArr));

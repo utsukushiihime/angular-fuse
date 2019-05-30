@@ -5,19 +5,19 @@ import { Card } from './card.model';
 
 const sampleLabels = [
     {
-        'id'   : '56027e4119ad3a5dc28b36cd',
-        'name' : 'Design',
-        'color': 'red-500'
+        id   : '56027e4119ad3a5dc28b36cd',
+        name : 'Design',
+        color: 'red-500'
     },
     {
-        'id'   : '5640635e19ad3a5dc21416b2',
-        'name' : 'App',
-        'color': 'blue-500'
+        id   : '5640635e19ad3a5dc21416b2',
+        name : 'App',
+        color: 'blue-500'
     },
     {
-        'id'   : '6540635g19ad3s5dc31412b2',
-        'name' : 'Feature',
-        'color': 'green-400'
+        id   : '6540635g19ad3s5dc31412b2',
+        name : 'Feature',
+        color: 'green-400'
     }
 ];
 
