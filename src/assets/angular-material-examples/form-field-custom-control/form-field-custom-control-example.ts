@@ -1,8 +1,8 @@
 import {FocusMonitor} from '@angular/cdk/a11y';
 import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {Component, ElementRef, Input, OnDestroy} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
-import {MatFormFieldControl} from '@angular/material';
+import {Component, ElementRef, Input, OnDestroy, Optional, Self} from '@angular/core';
+import {FormBuilder, FormGroup, ControlValueAccessor, NgControl} from '@angular/forms';
+import {MatFormFieldControl} from '@angular/material/form-field';
 import {Subject} from 'rxjs';
 
 /** @title Form field with custom telephone number input control. */
@@ -30,17 +30,18 @@ export class MyTel {
     '[attr.aria-describedby]': 'describedBy',
   }
 })
-export class MyTelInput implements MatFormFieldControl<MyTel>, OnDestroy {
+export class MyTelInput implements ControlValueAccessor, MatFormFieldControl<MyTel>, OnDestroy {
   static nextId = 0;
 
   parts: FormGroup;
   stateChanges = new Subject<void>();
   focused = false;
-  ngControl = null;
   errorState = false;
   controlType = 'example-tel-input';
   id = `example-tel-input-${MyTelInput.nextId++}`;
   describedBy = '';
+  onChange = (_: any) => {};
+  onTouched = () => {};
 
   get empty() {
     const {value: {area, exchange, subscriber}} = this.parts;
@@ -70,6 +71,7 @@ export class MyTelInput implements MatFormFieldControl<MyTel>, OnDestroy {
   get disabled(): boolean { return this._disabled; }
   set disabled(value: boolean) {
     this._disabled = coerceBooleanProperty(value);
+    this._disabled ? this.parts.disable() : this.parts.enable();
     this.stateChanges.next();
   }
   private _disabled = false;
@@ -88,22 +90,34 @@ export class MyTelInput implements MatFormFieldControl<MyTel>, OnDestroy {
     this.stateChanges.next();
   }
 
-  constructor(fb: FormBuilder, private fm: FocusMonitor, private elRef: ElementRef<HTMLElement>) {
-    this.parts = fb.group({
+  constructor(
+    formBuilder: FormBuilder,
+    private _focusMonitor: FocusMonitor,
+    private _elementRef: ElementRef<HTMLElement>,
+    @Optional() @Self() public ngControl: NgControl) {
+
+    this.parts = formBuilder.group({
       area: '',
       exchange: '',
       subscriber: '',
     });
 
-    fm.monitor(elRef, true).subscribe(origin => {
+    _focusMonitor.monitor(_elementRef, true).subscribe(origin => {
+      if (this.focused && !origin) {
+        this.onTouched();
+      }
       this.focused = !!origin;
       this.stateChanges.next();
     });
+
+    if (this.ngControl != null) {
+      this.ngControl.valueAccessor = this;
+    }
   }
 
   ngOnDestroy() {
     this.stateChanges.complete();
-    this.fm.stopMonitoring(this.elRef);
+    this._focusMonitor.stopMonitoring(this._elementRef);
   }
 
   setDescribedByIds(ids: string[]) {
@@ -112,7 +126,27 @@ export class MyTelInput implements MatFormFieldControl<MyTel>, OnDestroy {
 
   onContainerClick(event: MouseEvent) {
     if ((event.target as Element).tagName.toLowerCase() != 'input') {
-      this.elRef.nativeElement.querySelector('input')!.focus();
+      this._elementRef.nativeElement.querySelector('input')!.focus();
     }
+  }
+
+  writeValue(tel: MyTel | null): void {
+    this.value = tel;
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
+
+  _handleInput(): void {
+    this.onChange(this.parts.value);
   }
 }

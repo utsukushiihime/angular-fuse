@@ -1,12 +1,7 @@
 import {Component, Input, OnDestroy, OnInit, Optional, ViewChild} from '@angular/core';
 import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {
-    MatColumnDef,
-    MatSort,
-    MatSortHeader,
-    MatTable,
-    MatTableDataSource
-} from '@angular/material';
+import { MatSort, MatSortHeader } from '@angular/material/sort';
+import { MatColumnDef, MatTable, MatTableDataSource } from '@angular/material/table';
 
 export interface PeriodicElement {
   name: string;
@@ -39,9 +34,9 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class TableSimpleColumnExample implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-  getWeight = (data: PeriodicElement) => '~' + data.weight;
 
-  @ViewChild('sort') sort: MatSort;
+  @ViewChild('sort', {static: true}) sort: MatSort;
+  getWeight = (data: PeriodicElement) => '~' + data.weight;
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
@@ -106,9 +101,9 @@ export class SimpleColumn<T> implements OnDestroy, OnInit {
   }
   _sortable: boolean;
 
-  @ViewChild(MatColumnDef) columnDef: MatColumnDef;
+  @ViewChild(MatColumnDef, {static: true}) columnDef: MatColumnDef;
 
-  @ViewChild(MatSortHeader) sortHeader: MatSortHeader;
+  @ViewChild(MatSortHeader, {static: true}) sortHeader: MatSortHeader;
 
   constructor(@Optional() public table: MatTable<any>) { }
 

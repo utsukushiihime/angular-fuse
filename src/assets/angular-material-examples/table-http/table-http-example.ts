@@ -1,6 +1,7 @@
 import {HttpClient} from '@angular/common/http';
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatPaginator, MatSort} from '@angular/material';
+import {Component, ViewChild, AfterViewInit} from '@angular/core';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
 import {merge, Observable, of as observableOf} from 'rxjs';
 import {catchError, map, startWith, switchMap} from 'rxjs/operators';
 
@@ -12,22 +13,22 @@ import {catchError, map, startWith, switchMap} from 'rxjs/operators';
   styleUrls: ['table-http-example.css'],
   templateUrl: 'table-http-example.html',
 })
-export class TableHttpExample implements OnInit {
+export class TableHttpExample implements AfterViewInit {
   displayedColumns: string[] = ['created', 'state', 'number', 'title'];
-  exampleDatabase: ExampleHttpDao | null;
+  exampleDatabase: ExampleHttpDatabase | null;
   data: GithubIssue[] = [];
 
   resultsLength = 0;
   isLoadingResults = true;
   isRateLimitReached = false;
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
+  @ViewChild(MatSort, {static: false}) sort: MatSort;
 
-  constructor(private http: HttpClient) {}
+  constructor(private _httpClient: HttpClient) {}
 
-  ngOnInit() {
-    this.exampleDatabase = new ExampleHttpDao(this.http);
+  ngAfterViewInit() {
+    this.exampleDatabase = new ExampleHttpDatabase(this._httpClient);
 
     // If the user changes the sort order, reset back to the first page.
     this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
@@ -71,14 +72,14 @@ export interface GithubIssue {
 }
 
 /** An example database that the data source uses to retrieve data for the table. */
-export class ExampleHttpDao {
-  constructor(private http: HttpClient) {}
+export class ExampleHttpDatabase {
+  constructor(private _httpClient: HttpClient) {}
 
   getRepoIssues(sort: string, order: string, page: number): Observable<GithubApi> {
     const href = 'https://api.github.com/search/issues';
     const requestUrl =
-        `${href}?q=repo:angular/material2&sort=${sort}&order=${order}&page=${page + 1}`;
+        `${href}?q=repo:angular/components&sort=${sort}&order=${order}&page=${page + 1}`;
 
-    return this.http.get<GithubApi>(requestUrl);
+    return this._httpClient.get<GithubApi>(requestUrl);
   }
 }
