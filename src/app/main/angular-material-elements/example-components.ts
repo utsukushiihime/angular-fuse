@@ -173,6 +173,11 @@ import { StepperErrorsExample } from 'assets/angular-material-examples/stepper-e
 import { TabGroupAlignExample } from 'assets/angular-material-examples/tab-group-align/tab-group-align-example';
 import { SimpleColumn, TableSimpleColumnExample } from 'assets/angular-material-examples/table-simple-column/table-simple-column-example';
 import { TableWrappedExample, WrapperTable } from 'assets/angular-material-examples/table-wrapped/table-wrapped-example';
+import { PlainInputAutocompleteExample } from 'assets/angular-material-examples/autocomplete-plain-input/autocomplete-plain-input-example';
+import { ChipsDragDropExample } from 'assets/angular-material-examples/chips-drag-and-drop/chips-drag-and-drop-example';
+import { DatepickerDateClassExample } from 'assets/angular-material-examples/datepicker-date-class/datepicker-date-class-example';
+import { MenuPositionExample } from 'assets/angular-material-examples/menu-position/menu-position-example';
+import { TabGroupAnimationsExample } from 'assets/angular-material-examples/tab-group-animations/tab-group-animations-example';
 
 export const COMPONENT_MAP = {
     'autocomplete'    : [
@@ -181,7 +186,8 @@ export const COMPONENT_MAP = {
         'autocomplete-display',
         'autocomplete-filter',
         'autocomplete-optgroup',
-        'autocomplete-simple'
+        'autocomplete-simple',
+        'autocomplete-plain-input'
     ],
     'badge'           : [
         'badge-overview'
@@ -209,6 +215,7 @@ export const COMPONENT_MAP = {
     'chips'           : [
         'chips-overview',
         'chips-autocomplete',
+        // 'chips-drag-and-drop',
         'chips-input',
         'chips-stacked'
     ],
@@ -218,6 +225,7 @@ export const COMPONENT_MAP = {
         'datepicker-color',
         'datepicker-custom-header',
         'datepicker-custom-icon',
+        'datepicker-date-class',
         'datepicker-disabled',
         'datepicker-events',
         'datepicker-filter',
@@ -286,6 +294,7 @@ export const COMPONENT_MAP = {
     ],
     'menu'            : [
         'menu-overview',
+        'menu-position',
         'menu-icons',
         'nested-menu'
     ],
@@ -389,6 +398,7 @@ export const COMPONENT_MAP = {
         'tab-group-basic',
         'tab-group-async',
         'tab-group-align',
+        'tab-group-animations',
         'tab-group-custom-label',
         'tab-group-dynamic',
         'tab-group-dynamic-height',
@@ -448,6 +458,10 @@ export const EXAMPLE_COMPONENTS = {
         title    : 'Autocomplete overview',
         component: AutocompleteOverviewExample
     },
+    'autocomplete-plain-input'                  : {
+        title    : 'Plain input autocomplete',
+        component: PlainInputAutocompleteExample
+    },
     'autocomplete-simple'                  : {
         title    : 'Simple autocomplete',
         component: AutocompleteSimpleExample
@@ -502,6 +516,10 @@ export const EXAMPLE_COMPONENTS = {
         title    : 'Chips Autocomplete',
         component: ChipsAutocompleteExample
     },
+    'chips-drag-and-drop'                   : {
+        title    : 'Chips Drag and Drop',
+        component: ChipsDragDropExample
+    },
     'chips-input'                          : {
         title    : 'Chips with input',
         component: ChipsInputExample
@@ -530,6 +548,10 @@ export const EXAMPLE_COMPONENTS = {
     'datepicker-custom-icon'               : {
         title    : 'Datepicker with custom icon',
         component: DatepickerCustomIconExample
+    },
+    'datepicker-date-class'                  : {
+        title    : 'Datepicker with custom date classes',
+        component: DatepickerDateClassExample
     },
     'datepicker-disabled'                  : {
         title    : 'Disabled datepicker',
@@ -732,6 +754,10 @@ export const EXAMPLE_COMPONENTS = {
     'menu-overview'                        : {
         title    : 'Basic menu',
         component: MenuOverviewExample
+    },
+    'menu-position'                        : {
+        title    : 'Menu positioning',
+        component: MenuPositionExample
     },
     'nested-menu'                          : {
         title    : 'Nested menu',
@@ -1027,6 +1053,10 @@ export const EXAMPLE_COMPONENTS = {
         title    : 'Tab group with aligned labels',
         component: TabGroupAlignExample
     },
+    'tab-group-animations'                      : {
+        title    : 'Tab group animations',
+        component: TabGroupAnimationsExample
+    },
     'tab-group-basic'                      : {
         title    : 'Basic use of the tab group',
         component: TabGroupBasicExample
@@ -1152,6 +1182,7 @@ export const EXAMPLE_LIST = [
     AutocompleteOptgroupExample,
     AutocompleteOverviewExample,
     AutocompleteSimpleExample,
+    PlainInputAutocompleteExample,
     BadgeOverviewExample,
     BottomSheetOverviewExample, BottomSheetOverviewExampleSheet,
     ButtonOverviewExample,
@@ -1164,6 +1195,7 @@ export const EXAMPLE_LIST = [
     CheckboxConfigurableExample,
     CheckboxOverviewExample,
     ChipsAutocompleteExample,
+    ChipsDragDropExample,
     ChipsInputExample,
     ChipsOverviewExample,
     ChipsStackedExample,
@@ -1171,6 +1203,7 @@ export const EXAMPLE_LIST = [
     DatepickerColorExample,
     DatepickerCustomHeaderExample, ExampleHeader,
     DatepickerCustomIconExample,
+    DatepickerDateClassExample,
     DatepickerDisabledExample,
     DatepickerEventsExample,
     DatepickerFilterExample,
@@ -1219,6 +1252,7 @@ export const EXAMPLE_LIST = [
     ListSelectionExample,
     MenuIconsExample,
     MenuOverviewExample,
+    MenuPositionExample,
     NestedMenuExample,
     PaginatorConfigurableExample,
     PaginatorOverviewExample,
@@ -1292,6 +1326,7 @@ export const EXAMPLE_LIST = [
     TableStickyHeaderExample,
     TableWrappedExample, WrapperTable,
     TabGroupAlignExample,
+    TabGroupAnimationsExample,
     TabGroupBasicExample,
     TabGroupAsyncExample,
     TabGroupCustomLabelExample,
