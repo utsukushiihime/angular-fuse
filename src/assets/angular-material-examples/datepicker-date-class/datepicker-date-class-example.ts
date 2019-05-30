@@ -8,7 +8,7 @@ import {Component, ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class DatepickerDateClassExample {
-  dateClass = (d: Date) => {
+  dateClass = (d: any) => {
 
     const date = d.date();
 
