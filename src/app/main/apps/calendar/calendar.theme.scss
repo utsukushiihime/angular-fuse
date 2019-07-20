@@ -7,6 +7,7 @@
 
     // Month view
     .cal-month-view {
+        background: transparent !important;
 
         .cal-day-badge {
             background: map-get($accent, default);
@@ -80,6 +81,7 @@
 
     // Week view
     .cal-week-view {
+        background: transparent !important;
 
         .cal-event {
 
@@ -126,10 +128,58 @@
                 }
             }
         }
+
+        .cal-day-column {
+            border-left-color: map-get($foreground, divider);
+        }
+
+        .cal-all-day-events {
+            border-color: map-get($foreground, divider);
+        }
+
+        .cal-time-events {
+            border-color: map-get($foreground, divider);
+
+            .cal-day-columns:not(.cal-resize-active) .cal-hour-segment:hover {
+                background: map-get($background, hover);
+            }
+        }
+
+        .cal-hour {
+
+            .cal-hour-segment {
+
+                &:hover {
+                    background: map-get($background, hover);
+                }
+            }
+
+            &.cal-hour-odd {
+                background: map-get($background, hover);
+            }
+
+            &:not(:last-child) {
+
+                .cal-hour-segment {
+                    border-color: map-get($foreground, divider);
+                }
+            }
+
+            &:last-child {
+
+                :not(:last-child) {
+
+                    .cal-hour-segment {
+                        border-color: map-get($foreground, divider);
+                    }
+                }
+            }
+        }
     }
 
     // Day view
     .cal-day-view {
+        background: transparent !important;
 
         .cal-hour-rows {
             border-color: map-get($foreground, divider);
