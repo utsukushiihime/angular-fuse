@@ -42,10 +42,10 @@
 
     <ng-template #itemContent>
         <mat-icon class="nav-link-icon" *ngIf="item.icon">{{item.icon}}</mat-icon>
-        <span class="nav-link-title" [translate]="item.translate">{{item.title}}</span>
+        <span class="nav-link-title" [translate]="item.translate">{{(item.translate | translate) || item.title}}</span>
         <span class="nav-link-badge" *ngIf="item.badge" [translate]="item.badge.translate"
               [ngStyle]="{'background-color': item.badge.bg,'color': item.badge.fg}">
-            {{item.badge.title}}
+            {{(item.badge.translate | translate) || item.badge.title}}
         </span>
         <mat-icon class="collapsable-arrow">keyboard_arrow_right</mat-icon>
     </ng-template>

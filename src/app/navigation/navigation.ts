@@ -49,14 +49,14 @@ export const navigation: FuseNavigation[] = [
                         title     : 'Products',
                         type      : 'item',
                         url       : '/apps/e-commerce/products',
-                        exactMatch: true
+                        // exactMatch: true
                     },
                     {
                         id        : 'productDetail',
                         title     : 'Product Detail',
                         type      : 'item',
                         url       : '/apps/e-commerce/products/1/printed-dress',
-                        exactMatch: true
+                        // exactMatch: true
                     },
                     {
                         id        : 'orders',
