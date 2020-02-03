@@ -101,20 +101,16 @@
             <mwl-calendar-week-view
                 *ngSwitchCase="'week'"
                 [viewDate]="viewDate"
-                (viewDateChange)="selectedDay = {date:$event}"
                 [events]="events"
                 [refresh]="refresh"
-                (dayClicked)="dayClicked($event.day)"
                 (eventClicked)="editEvent('edit', $event.event)"
                 (eventTimesChanged)="eventTimesChanged($event)">
             </mwl-calendar-week-view>
             <mwl-calendar-day-view
                 *ngSwitchCase="'day'"
                 [viewDate]="viewDate"
-                (viewDateChange)="selectedDay = {date:$event}"
                 [events]="events"
                 [refresh]="refresh"
-                (dayClicked)="dayClicked($event.day)"
                 (eventClicked)="editEvent('edit', $event.event)"
                 (eventTimesChanged)="eventTimesChanged($event)">
             </mwl-calendar-day-view>

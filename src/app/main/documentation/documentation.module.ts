@@ -14,27 +14,27 @@ const routes: Routes = [
     },
     {
         path        : 'getting-started',
-        loadChildren: './getting-started/getting-started.module#GettingStartedModule'
+        loadChildren: () => import('./getting-started/getting-started.module').then(m => m.GettingStartedModule)
     },
     {
         path        : 'working-with-fuse',
-        loadChildren: './working-with-fuse/working-with-fuse.module#WorkingWithFuseModule'
+        loadChildren: () => import('./working-with-fuse/working-with-fuse.module').then(m => m.WorkingWithFuseModule)
     },
     {
         path        : 'components',
-        loadChildren: './components/components.module#ComponentsModule'
+        loadChildren: () => import('./components/components.module').then(m => m.ComponentsModule)
     },
     {
         path        : 'components-third-party',
-        loadChildren: './components-third-party/components-third-party.module#ComponentsThirdPartyModule'
+        loadChildren: () => import('./components-third-party/components-third-party.module').then(m => m.ComponentsThirdPartyModule)
     },
     {
         path        : 'directives',
-        loadChildren: './directives/directives.module#DirectivesModule'
+        loadChildren: () => import('./directives/directives.module').then(m => m.DirectivesModule)
     },
     {
         path        : 'services',
-        loadChildren: './services/services.module#ServicesModule'
+        loadChildren: () => import('./services/services.module').then(m => m.ServicesModule)
     }
 ];
 

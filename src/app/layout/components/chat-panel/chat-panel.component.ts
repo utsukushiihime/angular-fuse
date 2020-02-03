@@ -23,10 +23,10 @@ export class ChatPanelComponent implements OnInit, AfterViewInit, OnDestroy
     sidebarFolded: boolean;
     user: any;
 
-    @ViewChild('replyForm', {static: false})
+    @ViewChild('replyForm')
     private _replyForm: NgForm;
 
-    @ViewChild('replyInput', {static: false})
+    @ViewChild('replyInput')
     private _replyInput: ElementRef;
 
     @ViewChildren(FusePerfectScrollbarDirective)

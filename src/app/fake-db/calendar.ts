@@ -1,13 +1,4 @@
-import {
-    startOfDay,
-    endOfDay,
-    subDays,
-    addDays,
-    endOfMonth,
-    isSameDay,
-    isSameMonth,
-    addHours
-} from 'date-fns';
+import { addDays, addHours, endOfDay, endOfMonth, startOfDay, subDays } from 'date-fns';
 
 export class CalendarFakeDb
 {
@@ -37,7 +28,8 @@ export class CalendarFakeDb
                 },
                 {
                     start    : startOfDay(new Date()),
-                    title    : 'An event with no end date',
+                    end      : endOfDay(new Date()),
+                    title    : 'An event',
                     allDay   : false,
                     color    : {
                         primary  : '#FF9800',

@@ -15,7 +15,7 @@ export class ScrumboardBoardAddListComponent
     @Output()
     listAdded: EventEmitter<any>;
 
-    @ViewChild('nameInput', {static: false})
+    @ViewChild('nameInput')
     nameInputField;
 
     /**

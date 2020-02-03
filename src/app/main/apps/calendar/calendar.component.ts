@@ -167,7 +167,6 @@ export class CalendarComponent implements OnInit
     {
         event.start = newStart;
         event.end = newEnd;
-        // console.warn('Dropped or resized', event);
         this.refresh.next(true);
     }
 

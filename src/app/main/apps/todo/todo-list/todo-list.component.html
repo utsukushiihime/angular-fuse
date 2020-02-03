@@ -8,7 +8,6 @@
                     [model]="todo"
                     (click)="readTodo(todo.id)"
                     [ngClass]="{'current-todo':todo?.id == currentTodo?.id}"
-                    matRipple
                     [@animate]="{value:'*',params:{y:'100%'}}">
     </todo-list-item>
 </div>

@@ -3,7 +3,7 @@
 </div>
 
 <div class="mail-list">
-    <mail-ngrx-list-item matRipple *ngFor="let mail of mails" [mail]="mail" (click)="readMail(mail.id)"
+    <mail-ngrx-list-item *ngFor="let mail of mails" [mail]="mail" (click)="readMail(mail.id)"
                     [ngClass]="{'current-mail':mail?.id == currentMail?.id}">
     </mail-ngrx-list-item>
 </div>

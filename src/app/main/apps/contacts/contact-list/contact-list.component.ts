@@ -20,7 +20,7 @@ import { ContactsContactFormDialogComponent } from 'app/main/apps/contacts/conta
 })
 export class ContactsContactListComponent implements OnInit, OnDestroy
 {
-    @ViewChild('dialogContent', {static: false})
+    @ViewChild('dialogContent')
     dialogContent: TemplateRef<any>;
 
     contacts: any;

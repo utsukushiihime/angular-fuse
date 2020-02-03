@@ -3,7 +3,7 @@
 </div>
 
 <div class="mail-list" [@animateStagger]="{value:'50'}">
-    <mail-list-item matRipple *ngFor="let mail of mails" [mail]="mail" (click)="readMail(mail.id)"
+    <mail-list-item *ngFor="let mail of mails" [mail]="mail" (click)="readMail(mail.id)"
                     [ngClass]="{'current-mail':mail?.id == currentMail?.id}"
                     [@animate]="{value:'*',params:{y:'100%'}}">
     </mail-list-item>

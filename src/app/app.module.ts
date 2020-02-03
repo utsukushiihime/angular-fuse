@@ -24,23 +24,19 @@ import { LayoutModule } from 'app/layout/layout.module';
 const appRoutes: Routes = [
     {
         path        : 'apps',
-        loadChildren: './main/apps/apps.module#AppsModule'
+        loadChildren: () => import('./main/apps/apps.module').then(m => m.AppsModule)
     },
     {
         path        : 'pages',
-        loadChildren: './main/pages/pages.module#PagesModule'
+        loadChildren: () => import('./main/pages/pages.module').then(m => m.PagesModule)
     },
     {
         path        : 'ui',
-        loadChildren: './main/ui/ui.module#UIModule'
+        loadChildren: () => import('./main/ui/ui.module').then(m => m.UIModule)
     },
     {
         path        : 'documentation',
-        loadChildren: './main/documentation/documentation.module#DocumentationModule'
-    },
-    {
-        path        : 'angular-material-elements',
-        loadChildren: './main/angular-material-elements/angular-material-elements.module#AngularMaterialElementsModule'
+        loadChildren: () => import('./main/documentation/documentation.module').then(m => m.DocumentationModule)
     },
     {
         path      : '**',

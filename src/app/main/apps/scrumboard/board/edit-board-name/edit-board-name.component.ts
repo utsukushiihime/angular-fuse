@@ -18,7 +18,7 @@ export class ScrumboardEditBoardNameComponent
     @Output()
     boardNameChanged: EventEmitter<any>;
 
-    @ViewChild('nameInput', {static: false})
+    @ViewChild('nameInput')
     nameInputField;
 
     constructor(

@@ -17,6 +17,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
+            "aot": true,
                         "outputPath": "dist/fuse",
                         "index": "src/index.html",
                         "main": "src/main.ts",
@@ -55,14 +56,30 @@
                                     "type": "initial",
                                     "maximumWarning": "4mb",
                                     "maximumError": "6mb"
-                                }
+                                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
                             ]
                         },
                         "ec": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
                             "sourceMap": true,
                             "extractCss": true
                         },
                         "hmr": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
                             "fileReplacements": [
                                 {
                                     "replace": "src/environments/environment.ts",

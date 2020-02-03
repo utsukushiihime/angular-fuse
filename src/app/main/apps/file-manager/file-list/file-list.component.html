@@ -53,7 +53,7 @@
     <mat-row *matRowDef="let row; columns: displayedColumns;"
              (click)="onSelect(row)"
              [ngClass]="{'selected' : row == selected}"
-             matRipple [@animate]="{value:'*',params:{y:'100%'}}"
+             [@animate]="{value:'*',params:{y:'100%'}}"
     >
     </mat-row>
 </mat-table>

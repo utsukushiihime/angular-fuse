@@ -6,51 +6,51 @@ import { FuseSharedModule } from '@fuse/shared.module';
 const routes = [
     {
         path        : 'dashboards/analytics',
-        loadChildren: './dashboards/analytics/analytics.module#AnalyticsDashboardModule'
+        loadChildren: () => import('./dashboards/analytics/analytics.module').then(m => m.AnalyticsDashboardModule)
     },
     {
         path        : 'dashboards/project',
-        loadChildren: './dashboards/project/project.module#ProjectDashboardModule'
+        loadChildren: () => import('./dashboards/project/project.module').then(m => m.ProjectDashboardModule)
     },
     {
         path        : 'mail',
-        loadChildren: './mail/mail.module#MailModule'
+        loadChildren: () => import('./mail/mail.module').then(m => m.MailModule)
     },
     {
         path        : 'mail-ngrx',
-        loadChildren: './mail-ngrx/mail.module#MailNgrxModule'
+        loadChildren: () => import('./mail-ngrx/mail.module').then(m => m.MailNgrxModule)
     },
     {
         path        : 'chat',
-        loadChildren: './chat/chat.module#ChatModule'
+        loadChildren: () => import('./chat/chat.module').then(m => m.ChatModule)
     },
     {
         path        : 'calendar',
-        loadChildren: './calendar/calendar.module#CalendarModule'
+        loadChildren: () => import('./calendar/calendar.module').then(m => m.CalendarModule)
     },
     {
         path        : 'e-commerce',
-        loadChildren: './e-commerce/e-commerce.module#EcommerceModule'
+        loadChildren: () => import('./e-commerce/e-commerce.module').then(m => m.EcommerceModule)
     },
     {
         path        : 'academy',
-        loadChildren: './academy/academy.module#AcademyModule'
+        loadChildren: () => import('./academy/academy.module').then(m => m.AcademyModule)
     },
     {
         path        : 'todo',
-        loadChildren: './todo/todo.module#TodoModule'
+        loadChildren: () => import('./todo/todo.module').then(m => m.TodoModule)
     },
     {
         path        : 'file-manager',
-        loadChildren: './file-manager/file-manager.module#FileManagerModule'
+        loadChildren: () => import('./file-manager/file-manager.module').then(m => m.FileManagerModule)
     },
     {
         path        : 'contacts',
-        loadChildren: './contacts/contacts.module#ContactsModule'
+        loadChildren: () => import('./contacts/contacts.module').then(m => m.ContactsModule)
     },
     {
         path        : 'scrumboard',
-        loadChildren: './scrumboard/scrumboard.module#ScrumboardModule'
+        loadChildren: () => import('./scrumboard/scrumboard.module').then(m => m.ScrumboardModule)
     }
 ];
 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 
+import { UIAngularMaterialModule } from 'app/main/ui/angular-material/angular-material.module';
 import { UICardsModule } from 'app/main/ui/cards/cards.module';
 import { UIFormsModule } from 'app/main/ui/forms/forms.module';
 import { UIIconsModule } from 'app/main/ui/icons/icons.module';
@@ -10,6 +11,7 @@ import { UIColorsModule } from 'app/main/ui/colors/colors.module';
 
 @NgModule({
     imports: [
+        UIAngularMaterialModule,
         UICardsModule,
         UIFormsModule,
         UIIconsModule,
