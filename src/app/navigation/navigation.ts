@@ -49,7 +49,7 @@ export const navigation: FuseNavigation[] = [
                         title     : 'Products',
                         type      : 'item',
                         url       : '/apps/e-commerce/products',
-                        // exactMatch: true
+                        exactMatch: true
                     },
                     {
                         id        : 'productDetail',
