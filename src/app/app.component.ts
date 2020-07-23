@@ -86,17 +86,17 @@ export class AppComponent implements OnInit, OnDestroy
          * This is related to ngxTranslate module and below there is a temporary fix while we
          * are moving the multi language implementation over to the Angular's core language
          * service.
-         **/
+         */
 
         // Set the default language to 'en' and then back to 'tr'.
         // '.use' cannot be used here as ngxTranslate won't switch to a language that's already
         // been selected and there is no way to force it, so we overcome the issue by switching
         // the default language back and forth.
         /**
-         setTimeout(() => {
-            this._translateService.setDefaultLang('en');
-            this._translateService.setDefaultLang('tr');
-         });
+         * setTimeout(() => {
+         * this._translateService.setDefaultLang('en');
+         * this._translateService.setDefaultLang('tr');
+         * });
          */
 
         /**

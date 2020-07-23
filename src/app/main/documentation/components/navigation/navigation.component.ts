@@ -48,9 +48,9 @@ export class DocsComponentsNavigationComponent
     {
         // Update the badge title
         this._fuseNavigationService.updateNavigationItem('mail', {
-                badge: {
-                    title: 35
-                }
+            badge: {
+                title: 35
+            }
         });
     }
 
@@ -68,7 +68,7 @@ export class DocsComponentsNavigationComponent
         };
 
         this._fuseNavigationService.updateNavigationItem('calendar', {
-            type: 'collapsable',
+            type    : 'collapsable',
             children: [
                 newNavItem
             ]
