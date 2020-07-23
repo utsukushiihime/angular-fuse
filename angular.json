@@ -17,7 +17,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-            "aot": true,
+                        "aot": true,
                         "outputPath": "dist/fuse",
                         "index": "src/index.html",
                         "main": "src/main.ts",
@@ -32,7 +32,19 @@
                             "src/styles.scss"
                         ],
                         "scripts": [],
-                        "showCircularDependencies": false
+                        "showCircularDependencies": false,
+                        "allowedCommonJsDependencies": [
+                            "lodash",
+                            "@swimlane/dragula",
+                            "chart.js",
+                            "angular-calendar",
+                            "calendar-utils/date-adapters/date-fns",
+                            "contra/emitter",
+                            "crossvent",
+                            "dom-plane",
+                            "dom-set",
+                            "@mattlewis92/dom-autoscroller"
+                        ]
                     },
                     "configurations": {
                         "production": {
@@ -57,29 +69,29 @@
                                     "maximumWarning": "4mb",
                                     "maximumError": "6mb"
                                 },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
-                }
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "6kb"
+                                }
                             ]
                         },
                         "ec": {
-              "budgets": [
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
-                }
-              ],
+                            "budgets": [
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "6kb"
+                                }
+                            ],
                             "sourceMap": true,
                             "extractCss": true
                         },
                         "hmr": {
-              "budgets": [
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
-                }
-              ],
+                            "budgets": [
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "6kb"
+                                }
+                            ],
                             "fileReplacements": [
                                 {
                                     "replace": "src/environments/environment.ts",

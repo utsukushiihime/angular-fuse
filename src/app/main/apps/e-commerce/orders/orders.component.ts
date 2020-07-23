@@ -9,7 +9,7 @@ import { fuseAnimations } from '@fuse/animations';
 import { FuseUtils } from '@fuse/utils';
 
 import { EcommerceOrdersService } from 'app/main/apps/e-commerce/orders/orders.service';
-import { takeUntil } from 'rxjs/internal/operators';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
     selector     : 'e-commerce-orders',
